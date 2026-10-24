@@ -433,11 +433,11 @@ endif()
 install(
   CODE "file(MAKE_DIRECTORY ${lib_dir}/lldb)")
 
+if(LLDB_ENABLE_SWIFT_SUPPORT)
 install(
   DIRECTORY "${lib_dir}/lldb/clang"
   DESTINATION lib${LLVM_LIBDIR_SUFFIX}/lldb/)
 
-if(LLDB_ENABLE_SWIFT_SUPPORT)
 if(LLDB_BUILT_STANDALONE)
   install(
     DIRECTORY "${lib_dir}/lldb/swift"
